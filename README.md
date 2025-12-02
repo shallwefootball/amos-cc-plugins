@@ -25,6 +25,16 @@ GitHub 레포지토리를 클론하고 구조를 분석하여 마크다운 문�
 - 현재 작업 디렉토리를 IntelliJ IDEA CE로 바로 열기
 - 간단한 원라이너 커맨드
 
+### today
+
+오늘 하루 Claude Code로 뭘 했는지 활동 요약을 보여줍니다.
+
+**Features:**
+- `~/.claude/history.jsonl`에서 오늘 날짜 히스토리 추출
+- 프로젝트별 프롬프트 수 집계
+- 세션 요약 정보 활용
+- 마크다운 형식으로 깔끔하게 출력
+
 ## Installation
 
 ### Option 1: Using Plugin Marketplace (Recommended)
@@ -36,6 +46,7 @@ GitHub 레포지토리를 클론하고 구조를 분석하여 마크다운 문�
 # Install the plugins you need
 /plugin install analyze-repo@amos-cc-plugins
 /plugin install open-intellij@amos-cc-plugins
+/plugin install today@amos-cc-plugins
 ```
 
 ### Option 2: Manual Installation
@@ -51,10 +62,12 @@ cd amos-cc-plugins
 # For global installation (available in all projects)
 cp -r analyze-repo/commands/* ~/.claude/commands/
 cp -r open-intellij/commands/* ~/.claude/commands/
+cp -r today/commands/* ~/.claude/commands/
 
 # For project-specific installation
 cp -r analyze-repo/commands/* /path/to/your/project/.claude/commands/
 cp -r open-intellij/commands/* /path/to/your/project/.claude/commands/
+cp -r today/commands/* /path/to/your/project/.claude/commands/
 ```
 
 ## Usage
@@ -113,6 +126,34 @@ The command will:
 ```
 
 Opens the current directory in IntelliJ IDEA CE.
+
+### today
+
+```bash
+/today
+```
+
+Shows a summary of your Claude Code activity for today:
+- Total prompts count
+- Projects worked on
+- Activity breakdown by project
+- Session summaries (if available)
+
+**Example output:**
+```markdown
+## 오늘의 Claude Code 활동 (2025-12-02)
+
+### 총계
+- 총 프롬프트: 113개
+- 작업한 프로젝트: 3개
+
+### 프로젝트별 활동
+| 프로젝트 | 프롬프트 수 |
+|---------|-----------|
+| run-claude | 61 |
+| tier1-end | 26 |
+| flow2 | 26 |
+```
 
 ## Requirements
 
