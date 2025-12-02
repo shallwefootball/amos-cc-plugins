@@ -6,7 +6,7 @@
     "name": "Dongkeon Kim",
     "email": "amos@shallwefootball.com"
   },
-  "commands": {
-    "analyze-repo": "commands/analyze-repo.md"
-  }
+  "commands": [
+    "./commands/analyze-repo.md"
+  ]
 }
