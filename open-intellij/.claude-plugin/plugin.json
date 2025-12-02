@@ -1,0 +1,12 @@
+{
+  "name": "open-intellij",
+  "version": "1.0.0",
+  "description": "현재 디렉토리를 IntelliJ IDEA에서 엽니다",
+  "author": {
+    "name": "Dongkeon Kim",
+    "email": "amos@shallwefootball.com"
+  },
+  "commands": [
+    "./commands/intellij.md"
+  ]
+}

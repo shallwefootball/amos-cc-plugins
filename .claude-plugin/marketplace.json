@@ -16,6 +16,17 @@
       },
       "source": "./analyze-repo",
       "keywords": ["github", "analysis", "documentation", "repository"]
+    },
+    {
+      "name": "open-intellij",
+      "description": "현재 디렉토리를 IntelliJ IDEA에서 엽니다",
+      "version": "1.0.0",
+      "author": {
+        "name": "Dongkeon Kim",
+        "email": "amos@shallwefootball.com"
+      },
+      "source": "./open-intellij",
+      "keywords": ["intellij", "ide", "editor", "open"]
     }
   ]
 }
