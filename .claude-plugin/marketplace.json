@@ -7,17 +7,6 @@
   },
   "plugins": [
     {
-      "name": "analyze-repo",
-      "description": "GitHub 레포지토리를 클론하고 구조를 분석하여 마크다운 문서로 정리합니다",
-      "version": "1.0.0",
-      "author": {
-        "name": "Dongkeon Kim",
-        "email": "amos@shallwefootball.com"
-      },
-      "source": "./analyze-repo",
-      "keywords": ["github", "analysis", "documentation", "repository"]
-    },
-    {
       "name": "open-intellij",
       "description": "에디터(IntelliJ IDEA CE)를 열어줍니다. 자연어 또는 /intellij 명령어로 사용 가능",
       "version": "2.0.1",
