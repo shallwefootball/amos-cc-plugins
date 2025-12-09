@@ -1,5 +1,6 @@
 ---
 description: amos-cc-plugins 마켓플레이스를 업데이트합니다
+allowed-tools: Bash(cd:*), Bash(git pull:*)
 ---
 
 amos-cc-plugins 마켓플레이스를 GitHub에서 최신 버전으로 업데이트합니다.
