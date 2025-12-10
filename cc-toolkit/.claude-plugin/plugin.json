@@ -1,0 +1,16 @@
+{
+  "name": "cc-toolkit",
+  "version": "1.0.0",
+  "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update 명령어 포함",
+  "author": {
+    "name": "Dongkeon Kim",
+    "email": "amos@shallwefootball.com"
+  },
+  "commands": [
+    "./commands/today.md",
+    "./commands/yesterday.md",
+    "./commands/capture.md",
+    "./commands/intellij.md",
+    "./commands/update.md"
+  ]
+}
