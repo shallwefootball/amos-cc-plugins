@@ -1,6 +1,6 @@
 {
-  "name": "amos-cc-plugins",
-  "description": "Useful Claude Code plugins collection",
+  "name": "cc-toolkit",
+  "description": "Claude Code 유틸리티 모음",
   "owner": {
     "name": "Dongkeon Kim",
     "email": "amos@shallwefootball.com"
