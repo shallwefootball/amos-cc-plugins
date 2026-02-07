@@ -14,7 +14,7 @@
         "name": "Dongkeon Kim",
         "email": "amos@shallwefootball.com"
       },
-      "source": "./cc-toolkit",
+      "source": ".",
       "keywords": ["today", "yesterday", "capture", "intellij", "update", "sync", "docs", "obsidian", "activity", "utility"]
     }
   ]
