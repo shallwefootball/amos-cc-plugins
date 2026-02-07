@@ -15,7 +15,5 @@
     "./commands/sync.md",
     "./commands/sync-full.md"
   ],
-  "skills": [
-    "./skills/dive.md"
-  ]
+  "skills": "./skills/"
 }
