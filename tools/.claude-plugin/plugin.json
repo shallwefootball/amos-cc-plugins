@@ -13,7 +13,7 @@
     "./commands/intellij.md",
     "./commands/update.md",
     "./commands/sync.md",
-    "./commands/sync-full.md"
-  ],
-  "skills": "./skills/"
+    "./commands/sync-full.md",
+    "./commands/dive.md"
+  ]
 }
