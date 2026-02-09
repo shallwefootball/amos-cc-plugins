@@ -9,7 +9,7 @@
     {
       "name": "tools",
       "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update, /sync, /sync-full 명령어 포함",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "author": {
         "name": "Dongkeon Kim",
         "email": "amos@shallwefootball.com"
