@@ -53,7 +53,7 @@ Conventional Commits 형식:
 git add <관련 파일들>
 git commit -m "<message>
 
-Paired with Opus 4.6"
+Paired with <your model name>"
 ```
 
 **주의:**
