@@ -1,6 +1,6 @@
 {
   "name": "amos",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update, /sync, /sync-full, /dive, /ddd-init, /commit 명령어 포함",
   "author": {
     "name": "Dongkeon Kim",
