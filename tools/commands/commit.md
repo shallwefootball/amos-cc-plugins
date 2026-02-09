@@ -1,11 +1,19 @@
 ---
 description: 변경사항을 의미 단위로 쪼개서 커밋합니다
-allowed-tools: Bash(git:*)
+allowed-tools: Bash(git:*), Bash(touch:*), Bash(rm:*)
 ---
 
 변경사항을 분석하고 의미 단위로 쪼개서 커밋합니다.
 
 ## 실행
+
+### 0. 커밋 마커 생성
+
+**반드시 가장 먼저 실행하세요. 이것이 없으면 git commit이 차단됩니다.**
+
+```bash
+touch /tmp/.amos-commit-active
+```
 
 ### 1. 현재 상태 파악
 
@@ -48,24 +56,26 @@ Conventional Commits 형식:
 
 ### 4. 커밋 실행
 
-**중요: `git commit` 앞에 반드시 `AMOS_COMMIT=1`을 붙여야 합니다.** 이것이 없으면 commit-guard hook이 차단합니다.
-
 각 의미 단위마다:
 ```bash
-git add <관련 파일들> && AMOS_COMMIT=1 git commit -m "<message>
+git add <관련 파일들> && git commit -m "<message>
 
 Paired with <your model name>"
 ```
 
 **주의:**
-- **`AMOS_COMMIT=1`을 빠뜨리면 hook에 의해 차단됨** — 절대 빠뜨리지 말 것
 - `git add -A` 사용 금지. 파일 단위로 add.
 - `.env`, credentials 등 민감 파일 제외
 - 커밋 순서: 의존성 있으면 의존 대상 먼저
 
-### 5. 결과 보고
+### 5. 결과 보고 + 마커 정리
 
-모든 커밋 완료 후 요약:
+모든 커밋 완료 후:
+```bash
+rm -f /tmp/.amos-commit-active
+```
+
+요약:
 ```
 N개 커밋 완료:
 - <hash> <message>
