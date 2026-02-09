@@ -2,11 +2,15 @@
 # commit-guard: blocks direct git commit, redirects to /amos:commit skill
 #
 # PreToolUse hook for Bash tool.
-# Reads tool_input from stdin JSON, checks if command contains "git commit".
-# If so, denies execution and tells Claude to use the commit skill instead.
+# Blocks "git commit" unless prefixed with AMOS_COMMIT=1 (from /amos:commit skill).
 
 INPUT=$(cat)
 COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty')
+
+# Allow commits from /amos:commit skill (marked with AMOS_COMMIT=1)
+if echo "$COMMAND" | grep -q "AMOS_COMMIT=1"; then
+  exit 0
+fi
 
 if echo "$COMMAND" | grep -qE '(^|\s|&&|\|\||;)git\s+commit(\s|$)'; then
   cat <<'EOF'

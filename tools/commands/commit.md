@@ -51,7 +51,7 @@ Conventional Commits 형식:
 각 의미 단위마다:
 ```bash
 git add <관련 파일들>
-git commit -m "<message>
+AMOS_COMMIT=1 git commit -m "<message>
 
 Paired with <your model name>"
 ```
