@@ -1,5 +1,5 @@
 ---
-description: 변경사항을 의미 단위로 쪼개서 커밋합니다
+description: 변경사항을 의미 단위로 쪼개서 커밋합니다. Use when the user asks to commit, says "커밋해", "커밋하고 push해", "commit changes", "변경사항 저장", or asks to save/push their work to git. ALWAYS use this skill instead of manual git commit.
 allowed-tools: Bash(git:*)
 ---
 
