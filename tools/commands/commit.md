@@ -48,15 +48,17 @@ Conventional Commits 형식:
 
 ### 4. 커밋 실행
 
+**중요: `git commit` 앞에 반드시 `AMOS_COMMIT=1`을 붙여야 합니다.** 이것이 없으면 commit-guard hook이 차단합니다.
+
 각 의미 단위마다:
 ```bash
-git add <관련 파일들>
-AMOS_COMMIT=1 git commit -m "<message>
+git add <관련 파일들> && AMOS_COMMIT=1 git commit -m "<message>
 
 Paired with <your model name>"
 ```
 
 **주의:**
+- **`AMOS_COMMIT=1`을 빠뜨리면 hook에 의해 차단됨** — 절대 빠뜨리지 말 것
 - `git add -A` 사용 금지. 파일 단위로 add.
 - `.env`, credentials 등 민감 파일 제외
 - 커밋 순서: 의존성 있으면 의존 대상 먼저
