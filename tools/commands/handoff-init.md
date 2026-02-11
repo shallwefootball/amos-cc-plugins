@@ -1,13 +1,24 @@
 ---
-description: handoff 시스템을 설치합니다 (SessionStart hook + 글로벌 gitignore)
-allowed-tools: Bash(git:*), Bash(cat:*), Bash(touch:*), Bash(grep:*), Read, Write, Edit
+description: handoff 시스템을 설치합니다 (hook 스크립트 + SessionStart hook + 글로벌 gitignore)
+allowed-tools: Bash(git:*), Bash(cat:*), Bash(touch:*), Bash(grep:*), Bash(cp:*), Bash(chmod:*), Read, Write, Edit
 ---
 
 handoff 시스템을 설치합니다. 한 번만 실행하면 모든 프로젝트에서 사용 가능.
 
 ## 실행
 
-### 1. SessionStart hook 추가
+### 1. hook 스크립트 설치
+
+`~/.claude/plugins/marketplaces/cc-toolkit/tools/commands/handoff-hook.sh`를 `~/.claude/`로 복사:
+
+```bash
+cp ~/.claude/plugins/marketplaces/cc-toolkit/tools/commands/handoff-hook.sh ~/.claude/handoff-hook.sh
+chmod +x ~/.claude/handoff-hook.sh
+```
+
+이미 있으면 덮어쓰기.
+
+### 2. SessionStart hook 추가
 
 `~/.claude/settings.json`을 Read로 읽고, `hooks.SessionStart`가 없으면 추가해:
 
@@ -18,7 +29,7 @@ handoff 시스템을 설치합니다. 한 번만 실행하면 모든 프로젝�
     "hooks": [
       {
         "type": "command",
-        "command": "cat .handoff/latest.md 2>/dev/null || true"
+        "command": "bash ~/.claude/handoff-hook.sh"
       }
     ]
   }
@@ -27,13 +38,12 @@ handoff 시스템을 설치합니다. 한 번만 실행하면 모든 프로젝�
 
 **주의:**
 - 기존 hooks가 있으면 유지하고 SessionStart만 추가
-- 이미 SessionStart에 `.handoff` 관련 hook이 있으면 스킵
+- 이미 SessionStart에 `handoff` 관련 hook이 있으면 스킵
 - Edit 도구로 정확하게 수정할 것
 
-### 2. 글로벌 gitignore 설정
+### 3. 글로벌 gitignore 설정
 
 ```bash
-# 글로벌 gitignore 파일이 설정되어 있는지 확인
 git config --global core.excludesfile
 ```
 
@@ -48,18 +58,19 @@ git config --global core.excludesfile ~/.gitignore_global
 grep -q "^\.handoff/$" ~/.gitignore_global 2>/dev/null || echo ".handoff/" >> ~/.gitignore_global
 ```
 
-### 3. 완료 메시지
+### 4. 완료 메시지
 
 ```
 handoff 설치 완료!
 
 설치된 항목:
-- SessionStart hook: 새 세션 시작 시 .handoff/latest.md 자동 주입
+- ~/.claude/handoff-hook.sh (hook 스크립트)
+- SessionStart hook: 새 세션 시작 시 <handoff-context> 태그로 자동 주입
 - 글로벌 gitignore: .handoff/ 폴더 모든 프로젝트에서 무시
 
 사용법:
-- /handoff-init  ← 지금 한 거 (한 번만)
-- /handoff       ← 세션 끝에 (작업 내용 저장)
-- /compact       ← 작업 중 (압축 + 체크포인트)
-- 새 세션        ← 자동으로 이전 handoff 주입됨
+- /handoff        세션 끝에 작업 내용 저장
+- /handoff-draft  다른 세션에 넘길 초안 출력
+- /handoff-inject 다른 세션에서 받은 내용을 대상 폴더에 주입
+- /compact        작업 중 체크포인트 저장 + 압축
 ```
