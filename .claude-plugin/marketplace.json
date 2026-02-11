@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "amos",
-      "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update, /sync, /sync-full, /handoff, /compact 명령어 포함",
+      "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update, /sync, /sync-full, /handoff, /handoff-init, /handoff-draft, /handoff-inject, /compact 명령어 포함",
       "version": "2.2.0",
       "author": {
         "name": "Dongkeon Kim",
