@@ -58,19 +58,21 @@ git config --global core.excludesfile ~/.gitignore_global
 grep -q "^\.handoff/$" ~/.gitignore_global 2>/dev/null || echo ".handoff/" >> ~/.gitignore_global
 ```
 
-### 4. 완료 메시지
+### 4. 현재 handoff 확인
 
+설치 완료 후 `.handoff/latest.md`를 Read로 확인해:
+
+**있으면:**
 ```
-handoff 설치 완료!
+handoff 설치 완료! 이전 handoff를 발견했습니다:
+```
+내용을 보여주고 바로 작업을 안내해.
 
-설치된 항목:
-- ~/.claude/handoff-hook.sh (hook 스크립트)
-- SessionStart hook: 새 세션 시작 시 <handoff-context> 태그로 자동 주입
-- 글로벌 gitignore: .handoff/ 폴더 모든 프로젝트에서 무시
+**없으면:**
+```
+handoff 설치 완료! 현재 handoff 없음.
 
-사용법:
-- /handoff        세션 끝에 작업 내용 저장
-- /handoff-draft  다른 세션에 넘길 초안 출력
-- /handoff-inject 다른 세션에서 받은 내용을 대상 폴더에 주입
-- /compact        작업 중 체크포인트 저장 + 압축
+시작하려면:
+- 바로 작업 시작 → 세션 끝에 /handoff로 저장
+- 다른 세션에서 받을 내용이 있으면 → /handoff-inject
 ```
