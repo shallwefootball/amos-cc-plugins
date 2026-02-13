@@ -1,7 +1,7 @@
 {
   "name": "amos",
-  "version": "2.3.0",
-  "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update, /sync, /sync-full, /dive, /ddd-init, /commit, /handoff, /handoff-init, /handoff-draft, /handoff-inject, /compact 명령어 포함",
+  "version": "2.4.0",
+  "description": "Claude Code 유틸리티 모음. /today, /yesterday, /capture, /intellij, /update, /sync, /sync-full, /dive, /ddd-init, /commit, /handoff, /handoff-init, /handoff-draft, /handoff-inject, /compact, /cc-coach, /cc-review 명령어 포함",
   "author": {
     "name": "Dongkeon Kim",
     "email": "amos@shallwefootball.com"
@@ -21,6 +21,8 @@
     "./commands/handoff-init.md",
     "./commands/handoff-draft.md",
     "./commands/handoff-inject.md",
-    "./commands/compact.md"
+    "./commands/compact.md",
+    "./commands/cc-coach.md",
+    "./commands/cc-review.md"
   ]
 }
