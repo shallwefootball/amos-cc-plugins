@@ -2,6 +2,7 @@
 name: coder
 model: inherit
 color: blue
+description: Use when implementing features based on DDD design documents, following domain-driven design patterns
 tools:
   - Read
   - Grep

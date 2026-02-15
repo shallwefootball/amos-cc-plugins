@@ -2,6 +2,7 @@
 name: scout
 model: inherit
 color: yellow
+description: Use when exploring an existing codebase to understand its domain structure, business logic, or creating briefings for stakeholders
 tools:
   - Read
   - Grep

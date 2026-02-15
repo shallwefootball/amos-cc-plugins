@@ -2,6 +2,7 @@
 name: analyst
 model: inherit
 color: green
+description: Use when designing domain models, conducting event storming, or creating DDD architecture documents
 tools:
   - Read
   - Grep
