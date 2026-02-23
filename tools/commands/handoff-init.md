@@ -71,6 +71,7 @@ handoff 설치 완료! 이전 handoff를 발견했습니다:
 **없으면:**
 ```
 handoff 설치 완료! 현재 handoff 없음.
+hook이 8KB(~2,000 토큰) 초과 시 자동 truncate합니다.
 
 시작하려면:
 - 바로 작업 시작 → 세션 끝에 /handoff로 저장

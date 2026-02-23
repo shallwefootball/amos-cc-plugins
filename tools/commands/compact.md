@@ -15,7 +15,7 @@ PROJECT=$(basename $(pwd))
 BRANCH=$(git branch --show-current 2>/dev/null || echo "N/A")
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
 TIMESTAMP=$(date +"%Y-%m-%dT%H%M")
-mkdir -p .handoff
+mkdir -p .handoff/snapshots
 ```
 
 ### 2. 작업 내용 정리
@@ -24,26 +24,43 @@ mkdir -p .handoff
 
 ```markdown
 # Handoff: {프로젝트명} ({날짜}) [checkpoint]
+## Status: in_progress | blocked | review
 
 ## 목표
+(1~2줄)
+
 ## 현재 상태
+(어디까지 했는지)
+
 ## 핵심 파일
-## 성공한 접근
+- `path/to/file:L50-120` — 무엇을, 왜
+
+## 다음 할 일
+1. (우선순위 순)
+
+<!-- 해당될 때만 포함 -->
+## 결정 사항
+- [결정]: [이유] (영향: [파일들])
+
 ## 실패한 접근
-## 남은 것
+- [방법]: [왜 안 됐는지]
+
 ## 주의
+- [제약사항]
 ```
 
 단, /handoff보다 가볍게 — 핵심만 빠르게 정리. compact는 자주 할 수 있으니까.
 
+**작성 원칙:**
+- **2,000 토큰(~8KB) 이내**
+- 파일 내용 복사 금지. **경로 + 라인 범위만** (`file:L10-50`)
+- 빈 섹션은 삭제
+- "~해야 한다" 형식
+
 ### 3. 저장
 
 1. **`.handoff/latest.md`** — Write로 덮어쓰기
-2. **`.handoff/{TIMESTAMP}.md`** — 스냅샷
-3. **`.handoff/history.log`** — 한 줄 추가:
-   ```
-   [{DATE}] (compact) {현재 상태 요약 한 줄}
-   ```
+2. **`.handoff/snapshots/{TIMESTAMP}.md`** — 스냅샷
 
 ### 4. 압축 실행
 
@@ -52,7 +69,7 @@ mkdir -p .handoff
 ```
 체크포인트 저장 완료!
   → .handoff/latest.md 갱신
-  → .handoff/{TIMESTAMP}.md 스냅샷
+  → .handoff/snapshots/{TIMESTAMP}.md 스냅샷
 
 이제 /compact 를 직접 실행해서 대화를 압축하세요.
 ```

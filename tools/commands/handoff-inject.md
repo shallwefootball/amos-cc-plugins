@@ -34,32 +34,24 @@ TIMESTAMP=$(date +"%Y-%m-%dT%H%M")
 ```
 
 - Read로 기존 `latest.md` 읽기
-- `.handoff/{TIMESTAMP}.md`로 Write (백업)
-- `.handoff/history.log`에 추가:
-  ```
-  [{DATE}] (archived) 기존 handoff 백업 → {TIMESTAMP}.md
-  ```
+- `.handoff/snapshots/{TIMESTAMP}.md`로 Write (백업)
 
 ### 4. 새 handoff 저장
 
 ```bash
-mkdir -p <대상경로>/.handoff
+mkdir -p <대상경로>/.handoff/snapshots
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
 TIMESTAMP_NEW=$(date +"%Y-%m-%dT%H%M")
 ```
 
 1. **`<대상경로>/.handoff/latest.md`** — Write
-2. **`<대상경로>/.handoff/{TIMESTAMP_NEW}.md`** — 스냅샷
-3. **`<대상경로>/.handoff/history.log`** — 한 줄 추가:
-   ```
-   [{DATE}] (inject) {목표 요약 한 줄}
-   ```
+2. **`<대상경로>/.handoff/snapshots/{TIMESTAMP_NEW}.md`** — 스냅샷
 
 ### 5. 완료 메시지
 
 ```
 handoff 주입 완료!
   → <대상경로>/.handoff/latest.md
-  → <대상경로>/.handoff/{TIMESTAMP_NEW}.md (스냅샷)
+  → <대상경로>/.handoff/snapshots/{TIMESTAMP_NEW}.md (스냅샷)
 새 세션에서 자동으로 주입됩니다.
 ```
