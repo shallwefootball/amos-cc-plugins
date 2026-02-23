@@ -165,6 +165,26 @@ README.md              ← 허브: 프로젝트 소개 + 문서 인덱스
 ## License
 ```
 
+**TOC (Table of Contents) 규칙:**
+
+- `## ` 헤딩이 **4개 이상**이면 TOC를 자동 생성한다.
+- 위치: 첫 번째 `## ` 바로 위.
+- `## ` 레벨만 포함 (### 이하 제외). 단, 문서가 길면 `###`까지 포함.
+- 형식:
+
+```markdown
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Documentation](#documentation)
+- [Project Structure](#project-structure)
+- [License](#license)
+```
+
+- TOC 자체는 TOC에 넣지 않는다.
+- 문서 수정으로 헤딩이 추가/삭제/변경되면 TOC도 연쇄 업데이트.
+
 **보조 문서 상단 — 네비게이션:**
 
 ```markdown
@@ -220,6 +240,7 @@ README.md              ← 허브: 프로젝트 소개 + 문서 인덱스
 3. **README.md의 Documentation 테이블** — 문서 추가/삭제 시 테이블 갱신
 4. **섹션 앵커 변경** — 제목을 바꿨으면 이 섹션을 가리키는 앵커 링크 전부 갱신
 5. **프로젝트 구조 트리** — 디렉토리가 바뀌었으면 트리 갱신
+6. **TOC** — 헤딩 추가/삭제/변경 시 TOC 갱신
 
 **예시:** `AGENTS.md`에서 `## 팀 구성` 섹션을 `## Team Compositions`로 바꿨다면:
 - `README.md`에 `[팀 구성](AGENTS.md#팀-구성)` 링크가 있으면 → `[Team Compositions](AGENTS.md#team-compositions)`로 갱신
@@ -250,6 +271,7 @@ README.md              ← 허브: 프로젝트 소개 + 문서 인덱스
 - [ ] **역방향 링크가 있는가?** (A→B가 있으면 B→A 경로 확인)
 - [ ] 고아 문서가 없는가? (어디서도 링크 안 된 .md)
 - [ ] Documentation 테이블이 실제 docs/ 내용과 일치하는가?
+- [ ] **TOC가 실제 헤딩과 일치하는가?** (헤딩 4개 이상이면 TOC 필수)
 
 ---
 
