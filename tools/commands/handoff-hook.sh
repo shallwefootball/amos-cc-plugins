@@ -1,15 +1,22 @@
 #!/bin/bash
 if [ -f .handoff/latest.md ]; then
-  SIZE=$(wc -c < .handoff/latest.md)
-  echo "<handoff-context>"
-  echo "이전 세션 작업 상태. 핵심 파일은 직접 Read하세요."
-  echo ""
+  LINES=$(wc -l < .handoff/latest.md 2>/dev/null || echo 0)
+  SIZE=$(wc -c < .handoff/latest.md 2>/dev/null || echo 0)
+
   if [ "$SIZE" -gt 8000 ]; then
-    head -c 8000 .handoff/latest.md
-    echo ""
-    echo "... (truncated, full: .handoff/latest.md)"
+    CONTENT=$(head -c 8000 .handoff/latest.md)
+    CONTENT="${CONTENT}\n... (truncated, full: .handoff/latest.md)"
   else
-    cat .handoff/latest.md
+    CONTENT=$(cat .handoff/latest.md)
   fi
-  echo "</handoff-context>"
+
+  # JSON escape via python3
+  ESCAPED=$(echo "$CONTENT" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))')
+
+  # systemMessage → 사용자 터미널에 표시
+  # additionalContext → Claude 컨텍스트에 주입
+  cat <<ENDJSON
+{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":${ESCAPED}},"systemMessage":"📋 handoff loaded (${LINES} lines, ${SIZE} bytes)"}
+ENDJSON
 fi
+exit 0
