@@ -1,8 +1,8 @@
 ---
 name: docs-weaver
-model: sonnet
+model: inherit
 color: cyan
-description: Use when creating, updating, or auditing project documentation. Weaves a web of interconnected docs where every link stays valid, every cross-reference stays in sync, and no document is an island.
+description: Use proactively when creating, updating, or auditing project documentation. Handles README, API docs, architecture docs, changelogs. Weaves interconnected docs where every link stays valid.
 tools:
   - Read
   - Grep
@@ -65,7 +65,16 @@ README.md ─────────→ docs/AGENTS.md
 4. **연쇄 업데이트** — 수정한 문서를 참조하는 다른 문서도 확인
 5. 링크 무결성 검증
 
-### 모드 3: 문서망 감사 (리뷰)
+### 모드 3: API 문서 / CHANGELOG
+
+**트리거**: "API 문서 만들어줘", "엔드포인트 정리", "CHANGELOG 만들어줘"
+
+1. 코드에서 API 엔드포인트/변경사항 추출
+2. 문서 생성 (엔드포인트 목록, 요청/응답 스키마, CHANGELOG 등)
+3. README.md 허브에 링크 추가
+4. 상호 링크 검증
+
+### 모드 4: 문서망 감사 (리뷰)
 
 **트리거**: "문서 검토해줘", "링크 체크"
 

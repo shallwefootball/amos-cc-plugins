@@ -1,7 +1,7 @@
 {
   "name": "amos",
-  "version": "4.1.6",
-  "description": "Claude Code 유틸리티 + 에이전트 팩. 명령어 18개 + 에이전트 19개. 팩: ddd(analyst, coder, scout), quality(reviewer, tester, security, debugger, architect-reviewer), maintain(refactor-planner, migration, tech-debt), dx(perf, doc-gen, docs-weaver), dev(app, ui-craftsman), data(db-architect, ai-engineer), ops(troubleshooter)",
+  "version": "5.0.0",
+  "description": "Claude Code 유틸리티 + 에이전트 팩. 명령어 18개 + 에이전트 18개. 팩: ddd(analyst, coder, scout), quality(reviewer, tester, security, debugger, architect-reviewer), maintain(refactor-planner, migration, tech-debt), dx(perf, docs-weaver), dev(app, ui-craftsman), data(db-architect, ai-engineer), ops(troubleshooter)",
   "author": {
     "name": "Dongkeon Kim",
     "email": "amos@shallwefootball.com"
@@ -21,7 +21,7 @@
     "./commands/handoff-init.md",
     "./commands/handoff-draft.md",
     "./commands/handoff-inject.md",
-    "./commands/compact.md",
+    "./commands/checkpoint.md",
     "./commands/cc-coach.md",
     "./commands/cc-review.md",
     "./commands/recap.md"
@@ -37,14 +37,13 @@
     "./agents/maintain/migration.md",
     "./agents/maintain/tech-debt.md",
     "./agents/dx/perf.md",
-    "./agents/dx/doc-gen.md",
+    "./agents/dx/docs-weaver.md",
     "./agents/dev/app.md",
     "./agents/dev/ui-craftsman.md",
     "./agents/quality/debugger.md",
     "./agents/quality/architect-reviewer.md",
     "./agents/data/db-architect.md",
     "./agents/data/ai-engineer.md",
-    "./agents/ops/troubleshooter.md",
-    "./agents/dx/docs-weaver.md"
+    "./agents/ops/troubleshooter.md"
   ]
 }

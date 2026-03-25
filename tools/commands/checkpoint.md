@@ -1,5 +1,5 @@
 ---
-description: 대화를 압축하고 .handoff/ 체크포인트를 저장합니다.
+description: 작업 상태를 .handoff/에 체크포인트로 저장합니다. /compact 전에 사용.
 allowed-tools: Bash(date:*), Bash(git:*), Bash(basename:*), Bash(pwd:*), Bash(mkdir:*), Read, Write
 ---
 
@@ -49,7 +49,7 @@ mkdir -p .handoff/snapshots
 - [제약사항]
 ```
 
-단, /handoff보다 가볍게 — 핵심만 빠르게 정리. compact는 자주 할 수 있으니까.
+단, /handoff보다 가볍게 — 핵심만 빠르게 정리. checkpoint는 자주 할 수 있으니까.
 
 **작성 원칙:**
 - **2,000 토큰(~8KB) 이내**

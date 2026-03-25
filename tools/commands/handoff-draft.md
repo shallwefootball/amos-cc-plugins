@@ -4,7 +4,7 @@ allowed-tools: Bash(date:*), Bash(git:*), Bash(basename:*), Bash(pwd:*)
 ---
 
 현재 세션의 작업 상태를 handoff 포맷으로 정리해서 **터미널에 출력만** 해.
-파일 저장 안 함. 유저가 복사해서 다른 세션에 `/handoff inject`로 전달.
+파일 저장 안 함. 유저가 복사해서 다른 세션에 `/handoff-inject`로 전달.
 
 ## 실행
 
@@ -59,6 +59,6 @@ DATE=$(date +"%Y-%m-%d %H:%M:%S")
 출력 후 안내:
 
 ```
-위 내용을 복사해서 대상 세션에서 /handoff inject 로 주입하세요.
+위 내용을 복사해서 대상 세션에서 /handoff-inject 로 주입하세요.
 (2,000 토큰 예산 내로 작성됨)
 ```

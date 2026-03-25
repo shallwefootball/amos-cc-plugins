@@ -1,0 +1,4 @@
+*.bak
+.claude/
+.handoff/
+.DS_Store
