@@ -12,7 +12,7 @@ Claude Code 유틸리티 + 에이전트 팩.
 /plugin install tools@cc-toolkit
 ```
 
-## 커맨드 (18개)
+## 스킬 (18개)
 
 ### 활동 분석
 

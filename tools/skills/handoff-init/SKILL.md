@@ -9,10 +9,10 @@ handoff 시스템을 설치합니다. 한 번만 실행하면 모든 프로젝�
 
 ### 1. hook 스크립트 설치
 
-`~/.claude/plugins/marketplaces/cc-toolkit/tools/commands/handoff-hook.sh`를 `~/.claude/`로 복사:
+`${CLAUDE_SKILL_DIR}/scripts/handoff-hook.sh`를 `~/.claude/`로 복사:
 
 ```bash
-cp ~/.claude/plugins/marketplaces/cc-toolkit/tools/commands/handoff-hook.sh ~/.claude/handoff-hook.sh
+cp "${CLAUDE_SKILL_DIR}/scripts/handoff-hook.sh" ~/.claude/handoff-hook.sh
 chmod +x ~/.claude/handoff-hook.sh
 ```
 
