@@ -1,11 +1,30 @@
 {
   "name": "amos",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Claude Code 유틸리티 + 에이전트 팩. 스킬 18개 + 에이전트 18개.",
   "author": {
     "name": "Dongkeon Kim",
     "email": "amos@shallwefootball.com"
   },
   "skills": "./skills/",
-  "agents": "./agents/"
+  "agents": [
+    "./agents/ddd/analyst.md",
+    "./agents/ddd/coder.md",
+    "./agents/ddd/scout.md",
+    "./agents/quality/reviewer.md",
+    "./agents/quality/tester.md",
+    "./agents/quality/security.md",
+    "./agents/quality/debugger.md",
+    "./agents/quality/architect-reviewer.md",
+    "./agents/maintain/refactor-planner.md",
+    "./agents/maintain/migration.md",
+    "./agents/maintain/tech-debt.md",
+    "./agents/dx/perf.md",
+    "./agents/dx/docs-weaver.md",
+    "./agents/dev/app.md",
+    "./agents/dev/ui-craftsman.md",
+    "./agents/data/db-architect.md",
+    "./agents/data/ai-engineer.md",
+    "./agents/ops/troubleshooter.md"
+  ]
 }

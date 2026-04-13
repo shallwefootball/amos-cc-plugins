@@ -9,7 +9,7 @@
     {
       "name": "amos",
       "description": "Claude Code 유틸리티 + 에이전트 팩. 스킬 18개 + 에이전트 18개.",
-      "version": "5.1.0",
+      "version": "5.1.1",
       "author": {
         "name": "Dongkeon Kim",
         "email": "amos@shallwefootball.com"
